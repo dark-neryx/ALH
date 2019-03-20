@@ -1,0 +1,6 @@
+Due to the static compilation, no installation is required.  Place ah.exe in
+any directory desired.  Create an orders/ directory, and store .cfg files in
+the same directory as the executable.
+
+If terrain bitmaps are desired (enabled for Windows builds), keep them in the
+main directory as well, named as <terrain_type>.bmp.  (ex. hill.bmp, forest.bmp)
