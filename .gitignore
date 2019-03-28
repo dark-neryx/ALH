@@ -1,0 +1,17 @@
+# Visual Studio files
+
+ah.opensdf
+ah.sdf
+ah.vcxproj.user
+ah.v11.suo
+
+# App/source files
+
+ah.aps
+consts_ah.inc
+
+# Code build directories
+
+Release/
+Release_No_Py/
+

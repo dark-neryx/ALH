@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release No Python|Win32">
+      <Configuration>Release No Python</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{5F2CD756-0671-2248-4F1A-2EF52034E79B}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release No Python|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release No Python|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release No Python|Win32'">
+    <OutDir>.\Release_No_Py\</OutDir>
+    <IntDir>.\Release_No_Py\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>$(WX2)/lib/vc_lib/mswu/;$(WX2)/include/;$(PY24)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;__WINDOWS__;__WXMSW__;__WIN95__;__WIN32__;WINVER=0x0500;STRICT;HAVE_PYTHON;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\ah.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release\ah.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <RedirectOutputAndErrors>NUL</RedirectOutputAndErrors>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <AdditionalIncludeDirectories>$(WX2)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\ah.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libci.lib;msvcrtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Release\ah.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(WX2)/lib/vc_lib;$(PY24)/libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;comctl32.lib;rpcrt4.lib;winmm.lib;wxbase31u.lib;wxmsw31u_core.lib;wxpng.lib;wxzlib.lib;wxjpeg.lib;wxtiff.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release No Python|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MinSpace</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>$(WX2)/lib/vc_lib/mswu/;$(WX2)/include/;$(PY24)/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;__WINDOWS__;__WXMSW__;__WIN95__;__WIN32__;WINVER=0x0500;STRICT;wxMSVC_VERSION_AUTO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release_No_Py\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release_No_Py\ah.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release_No_Py\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release_No_Py\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Release_No_Py\ah.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <RedirectOutputAndErrors>NUL</RedirectOutputAndErrors>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <AdditionalIncludeDirectories>$(WX2)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release_No_Py\ah.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libc.lib;libci.lib;msvcrtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Release_No_Py\ah.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(WX2)/lib/vc_lib;$(PY24)/libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;comctl32.lib;rpcrt4.lib;winmm.lib;wxbase31u.lib;wxmsw31u_core.lib;wxpng.lib;wxzlib.lib;wxjpeg.lib;wxtiff.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(WX2)/include;$(WX2)/lib/msw;$(PY24)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WINDOWS__;__WXMSW__;DEBUG=1;__WXDEBUG__;__WIN95__;__WIN32__;WINVER=0x0400;STRICT;HAVE_PYTHON;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Debug\ah.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\Debug\ah.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <RedirectOutputAndErrors>NUL</RedirectOutputAndErrors>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <AdditionalIncludeDirectories>$(WX2)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\ah.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libcd.lib;libcid.lib;msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <OutputFile>.\Debug\ah.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(WX2)/lib;$(PY24)/libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wsock32.lib;odbc32.lib;odbccp32.lib;comctl32.lib;rpcrt4.lib;winmm.lib;wxmswd.lib;pngd.lib;zlibd.lib;jpegd.lib;tiffd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="doc\_bugs.txt" />
+    <CustomBuild Include="doc\_todo.txt" />
+    <CustomBuild Include="doc\history.txt" />
+    <CustomBuild Include="doc\install.txt" />
+    <CustomBuild Include="doc\readme.txt" />
+    <CustomBuild Include="bitmaps\centerout.bmp" />
+    <CustomBuild Include="bitmaps\centerout.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\icon_logo.ico" />
+    <CustomBuild Include="bitmaps\icon_logo.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\lastturn.bmp" />
+    <CustomBuild Include="bitmaps\lastturn.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\lastvisitturn.bmp" />
+    <CustomBuild Include="bitmaps\lastvisitturn.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\nextturn.bmp" />
+    <CustomBuild Include="bitmaps\nextturn.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\open.bmp" />
+    <CustomBuild Include="bitmaps\open.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\planedwn.bmp" />
+    <CustomBuild Include="bitmaps\planedwn.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\planeup.bmp" />
+    <CustomBuild Include="bitmaps\planeup.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\prevturn.bmp" />
+    <CustomBuild Include="bitmaps\prevturn.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\prevzoom.bmp" />
+    <CustomBuild Include="bitmaps\prevzoom.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\showcoord.bmp" />
+    <CustomBuild Include="bitmaps\showcoord.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\zoomin.bmp" />
+    <CustomBuild Include="bitmaps\zoomin.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="bitmaps\zoomout.bmp" />
+    <CustomBuild Include="bitmaps\zoomout.xpm">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ah.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ahapp.cpp" />
+    <ClCompile Include="ahframe.cpp" />
+    <ClCompile Include="atlaparser.cpp" />
+    <ClCompile Include="cfgfile.cpp" />
+    <ClCompile Include="collection.cpp" />
+    <ClCompile Include="consts_ah.cpp" />
+    <ClCompile Include="cstr.cpp" />
+    <ClCompile Include="data.cpp" />
+    <ClCompile Include="editpane.cpp" />
+    <ClCompile Include="editsframe.cpp" />
+    <ClCompile Include="errs.cpp" />
+    <ClCompile Include="extend.cpp" />
+    <ClCompile Include="extend_no.cpp" />
+    <ClCompile Include="files.cpp" />
+    <ClCompile Include="flagsdlg.cpp" />
+    <ClCompile Include="hash.cpp" />
+    <ClCompile Include="hexfilterdlg.cpp" />
+    <ClCompile Include="listcoledit.cpp" />
+    <ClCompile Include="listpane.cpp" />
+    <ClCompile Include="mapframe.cpp" />
+    <ClCompile Include="mappane.cpp" />
+    <ClCompile Include="msgframe.cpp" />
+    <ClCompile Include="objs.cpp" />
+    <ClCompile Include="optionsdlg.cpp" />
+    <ClCompile Include="unitfilterdlg.cpp" />
+    <ClCompile Include="unitframe.cpp" />
+    <ClCompile Include="unitframefltr.cpp" />
+    <ClCompile Include="unitpane.cpp" />
+    <ClCompile Include="unitpanefltr.cpp" />
+    <ClCompile Include="unitsplitdlg.cpp" />
+    <ClCompile Include="utildlgs.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ahapp.h" />
+    <ClInclude Include="ahframe.h" />
+    <ClInclude Include="atlaparser.h" />
+    <ClInclude Include="bool.h" />
+    <ClInclude Include="cfgfile.h" />
+    <ClInclude Include="collection.h" />
+    <ClInclude Include="compat.h" />
+    <ClInclude Include="consts.h" />
+    <ClInclude Include="consts_ah.h" />
+    <ClInclude Include="cstr.h" />
+    <ClInclude Include="data.h" />
+    <ClInclude Include="editpane.h" />
+    <ClInclude Include="editsframe.h" />
+    <ClInclude Include="errs.h" />
+    <ClInclude Include="extend.h" />
+    <ClInclude Include="files.h" />
+    <ClInclude Include="flagsdlg.h" />
+    <ClInclude Include="hash.h" />
+    <ClInclude Include="listcoledit.h" />
+    <ClInclude Include="listpane.h" />
+    <ClInclude Include="mapframe.h" />
+    <ClInclude Include="mappane.h" />
+    <ClInclude Include="msgframe.h" />
+    <ClInclude Include="objs.h" />
+    <ClInclude Include="optionsdlg.h" />
+    <ClInclude Include="stdhdr.h" />
+    <ClInclude Include="unitfilterdlg.h" />
+    <ClInclude Include="unitframe.h" />
+    <ClInclude Include="unitframefltr.h" />
+    <ClInclude Include="unitpane.h" />
+    <ClInclude Include="unitpanefltr.h" />
+    <ClInclude Include="unitsplitdlg.h" />
+    <ClInclude Include="utildlgs.h" />
+    <ClInclude Include="hexfilterdlg.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
