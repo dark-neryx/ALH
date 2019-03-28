@@ -15,3 +15,7 @@ consts_ah.inc
 Release/
 Release_No_Py/
 
+# Release directories
+
+Releases/template
+
